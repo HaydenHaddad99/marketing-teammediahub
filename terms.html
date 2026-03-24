@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Team Media Hub</title>
+  <meta name="description" content="Team Media Hub Terms of Service — the rules and agreement for using our platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F1117;
+      --bg-card: #161820;
+      --border: rgba(255, 255, 255, 0.07);
+      --cyan: #00C8FF;
+      --green: #00E87A;
+      --white: #FFFFFF;
+      --muted: rgba(255, 255, 255, 0.55);
+      --gradient: linear-gradient(90deg, #00C8FF, #00E87A);
+      --gradient-135: linear-gradient(135deg, #00C8FF, #00E87A);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 17, 23, 0.80);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 17px; font-weight: 700; letter-spacing: -0.3px;
+      text-decoration: none; color: var(--white);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-icon {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--gradient-135);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .nav-logo-icon svg { width: 16px; height: 16px; fill: #0F1117; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .badge-early {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
+      color: var(--cyan); background: rgba(0, 200, 255, 0.10);
+      border: 1px solid rgba(0, 200, 255, 0.25); padding: 3px 10px; border-radius: 100px;
+    }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--white); }
+
+    .page-hero {
+      max-width: 760px; margin: 0 auto; padding: 72px 24px 48px;
+    }
+    .page-hero h1 {
+      font-size: clamp(30px, 5vw, 48px); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.15; margin-bottom: 12px;
+    }
+    .page-hero .meta { font-size: 13px; color: rgba(255,255,255,0.30); }
+
+    .legal-body {
+      max-width: 760px; margin: 0 auto; padding: 0 24px 80px;
+    }
+    .legal-body h2 {
+      font-size: 18px; font-weight: 700; margin: 40px 0 12px;
+      padding-top: 40px; border-top: 1px solid var(--border);
+    }
+    .legal-body h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .legal-body p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+    .legal-body ul { padding-left: 20px; margin-bottom: 14px; }
+    .legal-body li { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 6px; }
+    .legal-body a { color: var(--cyan); text-decoration: none; }
+    .legal-body a:hover { text-decoration: underline; }
+    .legal-body strong { color: var(--white); font-weight: 600; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-link { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--white); }
+
+    @media (max-width: 600px) {
+      .nav-right .badge-early { display: none; }
+      .nav-right .nav-link:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5zm0 9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4zm9-9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5zm0 9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4z"/>
+          </svg>
+        </div>
+        <span>Team Media Hub</span>
+      </a>
+      <div class="nav-right">
+        <span class="badge-early">Early Access</span>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/pricing" class="nav-link">Pricing</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <a href="https://app.teammediahub.co" class="nav-link">Coach Sign-in</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <h1><span class="gradient-text">Terms of Service</span></h1>
+    <p class="meta">Last updated: February 26, 2026 &nbsp;·&nbsp; Quiet Giant LLC d/b/a Team Media Hub</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="legal-body">
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By using Team Media Hub, you agree to these terms. If you don't agree, please don't use our service. Simple as that.</p>
+
+    <h2>2. Account Responsibilities</h2>
+    <p>Team coaches are responsible for managing their team's access and content. Parents and uploaders must only share appropriate, team-related media. Don't upload anything illegal, offensive, or unrelated to your team.</p>
+    <p>You are responsible for maintaining the security of your account credentials. Notify us immediately at <a href="mailto:support@teammediahub.co">support@teammediahub.co</a> if you suspect unauthorized access.</p>
+
+    <h2>3. Storage &amp; Billing</h2>
+    <p>Free teams get 10GB of storage. Paid plans (Plus: 50GB, Pro: 200GB) are billed monthly. If you exceed your storage limit, uploads will be blocked until you upgrade or free up space.</p>
+    <p>During early access, all teams have full access at no charge. When paid plans launch, early access users will be notified in advance and offered a special rate.</p>
+
+    <h2>4. Content Ownership</h2>
+    <p>You own all media you upload. We don't claim any rights to your photos or videos. We store them securely and make them available only to your team members.</p>
+    <p>By uploading content, you grant Quiet Giant LLC a limited license to store and serve that content to your team members for the purpose of operating the Service.</p>
+
+    <h2>5. Team Codes and Access</h2>
+    <p>Coaches who create teams are responsible for managing who has access via their team code. Do not share your team code publicly or with people who should not have access to your team's content.</p>
+
+    <h2>6. Acceptable Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the Service for any unlawful purpose</li>
+      <li>Upload anything illegal, offensive, or unrelated to your team</li>
+      <li>Attempt to gain unauthorized access to any part of the Service</li>
+      <li>Interfere with or disrupt the Service's infrastructure</li>
+      <li>Scrape, crawl, or harvest data from the Service without permission</li>
+      <li>Impersonate other users or entities</li>
+    </ul>
+
+    <h2>7. Service Availability</h2>
+    <p>We strive for 99.9% uptime but can't guarantee it. We may perform maintenance that temporarily limits access. We're not liable for data loss (though we back up regularly).</p>
+
+    <h2>8. Intellectual Property</h2>
+    <p>The Team Media Hub platform, including its design, code, trademarks, and branding, is owned by Quiet Giant LLC. You may not copy, modify, or distribute our platform without permission.</p>
+
+    <h2>9. Disclaimer of Warranties</h2>
+    <p>The Service is provided "as is" without warranties of any kind, express or implied. We do not guarantee uninterrupted or error-free service. Use the Service at your own risk.</p>
+
+    <h2>10. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Quiet Giant LLC shall not be liable for indirect, incidental, special, or consequential damages arising from your use of the Service.</p>
+
+    <h2>11. Termination</h2>
+    <p>You can cancel anytime. We may suspend accounts that violate these terms. Upon cancellation, your data will be retained for 30 days, then permanently deleted.</p>
+
+    <h2>12. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. We will notify you of material changes via email or in-app notice. Continued use of the Service after changes take effect constitutes acceptance.</p>
+
+    <h2>13. Governing Law</h2>
+    <p>These Terms are governed by the laws of the United States and the state in which Quiet Giant LLC is incorporated, without regard to conflict of law principles.</p>
+
+    <h2>Questions?</h2>
+    <p>Contact us at <a href="mailto:support@teammediahub.co">support@teammediahub.co</a><br />
+    Quiet Giant LLC d/b/a Team Media Hub</p>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2025 Team Media Hub &middot; Quiet Giant LLC</span>
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About</a>
+        <a href="/pricing" class="footer-link">Pricing</a>
+        <a href="/contact" class="footer-link">Contact</a>
+        <a href="/privacy" class="footer-link">Privacy</a>
+        <a href="/terms" class="footer-link">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

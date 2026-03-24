@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Team Media Hub</title>
+  <meta name="description" content="Get in touch with Team Media Hub. We're happy to help coaches, parents, and organizations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0F1117;
+      --bg-card: #161820;
+      --bg-card-hover: #1c1f2a;
+      --border: rgba(255, 255, 255, 0.07);
+      --border-hover: rgba(0, 200, 255, 0.25);
+      --cyan: #00C8FF;
+      --green: #00E87A;
+      --white: #FFFFFF;
+      --muted: rgba(255, 255, 255, 0.55);
+      --gradient: linear-gradient(90deg, #00C8FF, #00E87A);
+      --gradient-135: linear-gradient(135deg, #00C8FF, #00E87A);
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15, 17, 23, 0.80);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 17px; font-weight: 700; letter-spacing: -0.3px;
+      text-decoration: none; color: var(--white);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-icon {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--gradient-135);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .nav-logo-icon svg { width: 16px; height: 16px; fill: #0F1117; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .badge-early {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase;
+      color: var(--cyan); background: rgba(0, 200, 255, 0.10);
+      border: 1px solid rgba(0, 200, 255, 0.25); padding: 3px 10px; border-radius: 100px;
+    }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--white); }
+    .nav-link.active { color: var(--white); }
+
+    .page-hero {
+      max-width: 1100px; margin: 0 auto; padding: 80px 24px 64px;
+      text-align: center; position: relative;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse at center, rgba(0, 200, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+    }
+    .page-eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gradient); flex-shrink: 0; }
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 60px); font-weight: 800;
+      letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 20px;
+    }
+    .page-hero p { font-size: clamp(16px, 2.2vw, 19px); color: var(--muted); max-width: 520px; margin: 0 auto; }
+
+    /* CONTACT LAYOUT */
+    .contact-wrap {
+      max-width: 900px; margin: 0 auto; padding: 0 24px 80px;
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start;
+    }
+
+    /* INFO CARDS */
+    .contact-info { display: flex; flex-direction: column; gap: 16px; }
+    .info-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 20px;
+      transition: border-color 0.2s;
+    }
+    .info-card:hover { border-color: var(--border-hover); }
+    .info-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(0, 200, 255, 0.10); border: 1px solid rgba(0, 200, 255, 0.15);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .info-icon svg { width: 18px; height: 18px; }
+    .info-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .info-card p { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0; }
+    .info-card a { color: var(--cyan); text-decoration: none; }
+    .info-card a:hover { text-decoration: underline; }
+
+    /* FORM */
+    .contact-form-wrap {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px 28px;
+    }
+    .contact-form-wrap h2 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300;
+      padding: 11px 14px; outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+      padding-right: 36px; cursor: pointer;
+    }
+    .form-group select option { background: #1c1f2a; color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: rgba(0, 200, 255, 0.40); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .btn-submit {
+      width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--gradient); color: #0F1117;
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+      border: none; border-radius: var(--radius-sm); padding: 13px 24px;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0, 200, 255, 0.25); }
+
+    .form-note { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 14px; text-align: center; }
+
+    /* success state */
+    .form-success {
+      display: none; text-align: center; padding: 32px 0;
+    }
+    .form-success .success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(0, 232, 122, 0.12); border: 1px solid rgba(0, 232, 122, 0.25);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+    }
+    .form-success h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .form-success p { font-size: 15px; color: var(--muted); }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 24px; }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-link { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--white); }
+
+    @media (max-width: 700px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-right .badge-early { display: none; }
+      .nav-right .nav-link:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5zm0 9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4zm9-9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5zm0 9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4z"/>
+          </svg>
+        </div>
+        <span>Team Media Hub</span>
+      </a>
+      <div class="nav-right">
+        <span class="badge-early">Early Access</span>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/pricing" class="nav-link">Pricing</a>
+        <a href="/contact" class="nav-link active">Contact</a>
+        <a href="https://app.teammediahub.co" class="nav-link">Coach Sign-in</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="page-eyebrow">
+      <span class="page-eyebrow-dot"></span>
+      We'd love to hear from you
+    </div>
+    <h1><span class="gradient-text">Get in touch</span></h1>
+    <p>Have a question, a team scenario, or want to talk Pro plans? We're a small team and we actually read every message.</p>
+  </div>
+
+  <!-- CONTACT LAYOUT -->
+  <div class="contact-wrap">
+
+    <!-- Left: Info -->
+    <div class="contact-info">
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00C8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <h3>Support</h3>
+        <p>Have a question, issue, or feature request? We're here to help.<br /><a href="mailto:support@teammediahub.co">support@teammediahub.co</a><br /><span style="font-size:13px; color: rgba(255,255,255,0.30);">We typically respond within 24 hours (usually much faster).</span></p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00C8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+          </svg>
+        </div>
+        <h3>Billing Questions</h3>
+        <p>Need help with subscriptions, upgrades, or invoices? Same email works:<br /><a href="mailto:support@teammediahub.co">support@teammediahub.co</a></p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00C8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 8v4"/><path d="M12 16h.01"/>
+          </svg>
+        </div>
+        <h3>Technical Issues</h3>
+        <p style="margin-bottom: 8px;">When reporting bugs, please include:</p>
+        <ul style="list-style: disc; padding-left: 18px; font-size: 13px; color: rgba(255,255,255,0.55); display: flex; flex-direction: column; gap: 4px;">
+          <li>Your team code (if applicable)</li>
+          <li>Browser and device you're using</li>
+          <li>Steps to reproduce the issue</li>
+          <li>Any error messages you see</li>
+        </ul>
+        <p style="font-size: 13px; margin-top: 10px; margin-bottom: 0;">This helps us fix things faster. Thanks!</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00C8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Built By Coaches</h3>
+        <p>Team Media Hub was created by coaches who were frustrated with existing photo-sharing solutions. We're always improving based on feedback from teams like yours.</p>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="contact-form-wrap">
+      <h2>Send us a message</h2>
+      <form id="contact-form" action="https://formsubmit.co/support@teammediahub.co" method="POST">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New message from teammediahub.co/contact" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://teammediahub.co/contact?sent=1" />
+        <input type="text" name="_honey" style="display:none" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first_name" placeholder="Coach Sarah" required />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Johnson" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="sarah@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="topic">What can we help with?</label>
+          <select id="topic" name="topic">
+            <option value="">Select a topic…</option>
+            <option value="general">General question</option>
+            <option value="account">Account or team help</option>
+            <option value="pricing">Pricing &amp; plans</option>
+            <option value="organization">Multi-team / organization</option>
+            <option value="feedback">Product feedback</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send message
+        </button>
+        <p class="form-note">By submitting, you agree to our <a href="/privacy" style="color: rgba(255,255,255,0.45);">Privacy Policy</a>.</p>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2025 Team Media Hub &middot; Quiet Giant LLC</span>
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About</a>
+        <a href="/pricing" class="footer-link">Pricing</a>
+        <a href="/contact" class="footer-link">Contact</a>
+        <a href="/privacy" class="footer-link">Privacy</a>
+        <a href="/terms" class="footer-link">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Show success state if redirected back with ?sent=1
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      document.getElementById('contact-form').style.display = 'none';
+      const wrap = document.querySelector('.contact-form-wrap');
+      wrap.querySelector('h2').style.display = 'none';
+      const success = document.createElement('div');
+      success.className = 'form-success';
+      success.style.display = 'block';
+      success.innerHTML = `
+        <div class="success-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Message sent!</h3>
+        <p>Thanks for reaching out. We'll get back to you within 1 business day.</p>
+      `;
+      wrap.appendChild(success);
+    }
+  </script>
+
+</body>
+</html>
