@@ -30,7 +30,7 @@ jobs:
             --verbose
             --no-progress
             --offline
-            --base .
+            --base ${{ github.workspace }}
             ./**/*.html
           fail: true
 
