@@ -116,7 +116,7 @@
 
     /* PRICING CARDS */
     .pricing-wrap {
-      max-width: 900px; margin: 0 auto; padding: 0 24px 80px;
+      max-width: 1100px; margin: 0 auto; padding: 0 24px 80px;
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
     }
 
@@ -206,7 +206,7 @@
         <a href="/about" class="nav-link">About</a>
         <a href="/pricing" class="nav-link active">Pricing</a>
         <a href="/contact" class="nav-link">Contact</a>
-        <a href="https://app.teammediahub.co" class="nav-link">Coach Sign-in</a>
+        <a href="https://app.teammediahub.co" class="nav-link">Admin Sign-in</a>
       </div>
     </div>
   </nav>
@@ -217,8 +217,8 @@
       <span class="page-eyebrow-dot"></span>
       Simple, transparent pricing
     </div>
-    <h1><span class="gradient-text">Free to start,</span><br />built to grow</h1>
-    <p>During early access, every team gets full access for free. Paid plans are coming — and early users will always get a special rate.</p>
+    <h1><span class="gradient-text">Simple pricing,</span><br />built for teams</h1>
+    <p>Start free and upgrade when your team is ready. No contracts, no surprises — early access users always get a special rate.</p>
   </div>
 
   <!-- PLANS -->
@@ -242,7 +242,7 @@
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Coach + parent access
+          Admin + parent access
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -269,11 +269,12 @@
       </div>
     </div>
 
-      <div class="plan-card" style="opacity: 0.7;">
-      <span class="plan-badge" style="color: var(--muted); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.10);">Coming soon</span>
-      <div class="plan-name">Plus &amp; Pro Plans</div>
-      <div class="plan-price" style="color: var(--muted);">TBD<span></span></div>
-      <p class="plan-desc">More storage, multiple teams, advanced admin controls. Details coming soon.</p>
+    <!-- Plus Plan -->
+    <div class="plan-card">
+      <span class="plan-badge">Plus</span>
+      <div class="plan-name">Plus Plan</div>
+      <div class="plan-price gradient-text">$19<span> / month</span></div>
+      <p class="plan-desc">More storage for growing teams. Great for active seasons with lots of photos and video.</p>
       <hr class="plan-divider" />
       <ul class="plan-features">
         <li>
@@ -282,27 +283,33 @@
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Plus: 50GB storage
-        </li>
-        <li>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Pro: 200GB storage
-        </li>
-        <li>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Multiple teams under one account
-        </li>
-        <li>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Admin controls &amp; member management
-        </li>
-        <li>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Priority support
+          <strong>50GB team storage</strong>
         </li>
       </ul>
       <div class="plan-cta">
-        <a href="/contact" class="btn btn-ghost">Get notified when ready</a>
+        <a href="https://app.teammediahub.co" class="btn btn-primary">Upgrade to Plus</a>
+      </div>
+    </div>
+
+    <!-- Pro Plan -->
+    <div class="plan-card">
+      <span class="plan-badge">Pro</span>
+      <div class="plan-name">Pro Plan</div>
+      <div class="plan-price gradient-text">$39<span> / month</span></div>
+      <p class="plan-desc">Built for teams with heavy media needs. Same full access, just a lot more room.</p>
+      <hr class="plan-divider" />
+      <ul class="plan-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Everything in the Free plan
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E87A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <strong>200GB team storage</strong>
+        </li>
+      </ul>
+      <div class="plan-cta">
+        <a href="https://app.teammediahub.co" class="btn btn-primary">Upgrade to Pro</a>
       </div>
     </div>
 
@@ -312,27 +319,27 @@
 
     <div class="faq-item">
       <div class="faq-q">Is it really free?</div>
-      <div class="faq-a">Yes — during early access, the full product is free to use with no credit card required. When paid plans launch, teams that joined during early access will get a discounted rate.</div>
+      <div class="faq-a">Yes — the Free plan is always free with 10GB of team storage, no credit card required. Upgrade to Plus ($19/mo) or Pro ($39/mo) when you need more storage or advanced features.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">What happens when early access ends?</div>
-      <div class="faq-a">You'll be notified well in advance. Early access users will be offered a special pricing tier before we open to the public. We'll never surprise you with sudden charges.</div>
+      <div class="faq-q">What's the difference between Plus and Pro?</div>
+      <div class="faq-a">The only difference is storage. All plans have the same full access — Plus gives you 50GB and Pro gives you 200GB. Upgrade based on how much media your team stores.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I upgrade or downgrade anytime?</div>
+      <div class="faq-a">Yes. You can upgrade or downgrade your plan at any time from within the app at app.teammediahub.co. No contracts, no lock-in.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q">How do parents join?</div>
-      <div class="faq-a">Coaches create a team and share a simple team code. Parents enter the code at app.teammediahub.co to join instantly — no account creation friction required.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Are there storage limits?</div>
-      <div class="faq-a">We're operating with generous limits during early access and working out the details for paid tiers. If you're hitting any limits, reach out and we'll work with you.</div>
+      <div class="faq-a">Team admins create a team and share a simple team code. Parents enter the code at app.teammediahub.co to join instantly — no account creation friction required.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-q">Do you have a plan for athletic directors or multiple teams?</div>
-      <div class="faq-a">Yes — that's exactly what the Pro Plan will cover. <a href="/contact" style="color: var(--cyan); text-decoration: none;">Contact us</a> if you have a multi-team organization and want to talk through options early.</div>
+      <div class="faq-a">Yes — that's exactly what the Pro Plan covers. <a href="/contact" style="color: var(--cyan); text-decoration: none;">Contact us</a> if you have a multi-team organization and want to talk through options.</div>
     </div>
   </div>
 
