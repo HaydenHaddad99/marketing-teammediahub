@@ -30,6 +30,7 @@ jobs:
             --verbose
             --no-progress
             --offline
+            --base .
             ./**/*.html
           fail: true
 
